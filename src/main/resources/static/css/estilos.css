@@ -1,0 +1,45 @@
+header{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+article header{
+    background-color: black;
+    color: white;
+}
+h2{
+    text-align: center;
+    background-color: green;
+    color: white;
+}
+
+#titulo{
+    background-color: yellow;
+    font-size: 44px; 
+    color: black;
+}
+
+.producto{
+    background-color: bisque;
+}
+
+nav a {
+    background-color: blue;
+    color: white;
+}
+
+nav a:hover{ /*mouse sobre el enlace*/
+    background-color: black;
+    color: white;   
+    font-size: 10px;
+    animation-delay: 1s;
+}
+
+article:nth-child(odd){
+    background-color: palevioletred;
+    
+}
+
+article:nth-child(even){
+    background-color: peru;
+}
