@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">      
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <a class="logo nav-link" href="index.html">TechShop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo7.html">&LeftTriangleBar;</a>              
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="ejemplo2.html">&RightTriangleBar;</a>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="audios.html">Audios</a>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="videos.html">Videos</a>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="iframes.html">Frames</a>
+                    <li class="nav-menu-item"><a class="nav-menu-link nav-link" href="formularios.html">Formularios</a>
+                </ul>
+            </nav>   
+        </header>
+        <section>
+
+            <h2> Ejemplos de formularios</h2>
+            <article>
+                <header><h3>Ingrese la informacion</h3></header>
+                <form action="/cliente/ingresar" method="post"> 
+                    <input type="hidden"
+                           name="id"
+                           value="AB-450">
+                    <fieldset>
+                        <label>Nombre</label>
+                        <input type="text" 
+                               name="nombre" 
+                               placeholder="Apellido1 Apellido2 Nombre"
+                               size="45">                   
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Edad</label>
+                        <input type="number" 
+                               name="edad" 
+                               min="18"
+                               max="25">                   
+                    </fieldset>
+
+                    <fieldset>
+                        <label>Aficionado a: </label>
+                        Anime <input 
+                            type="checkbox" 
+                            name="anime"
+                            >     
+                        Drama <input 
+                            type="checkbox" 
+                            name="drama"
+                            > 
+                        Comedia <input 
+                            type="checkbox" 
+                            name="comedia"
+                            > 
+                        Documental <input 
+                            type="checkbox" 
+                            name="documental"
+                            >                     
+                    </fieldset>
+                    <fieldset>
+                        <label>Tipo de horario: </label>
+                        Presencial <input 
+                            type="radio" 
+                            name="presencial"
+                            value="presencial"
+                            >     
+                        Virtual <input 
+                            type="radio" 
+                            name="virtual"
+                            value="virtual"
+                            > 
+                        Online <input 
+                            type="radio" 
+                            name="online"
+                            value="online"
+                            > 
+                        Bimodal <input 
+                            type="radio" 
+                            name="bimodal"
+                            value="bimodal"
+                            >                     
+                    </fieldset>
+                    <fieldset>
+                        <label>Fecha de cita </label><br>
+                        Dia: <input 
+                            type="date" 
+                            name="dia"                          
+                            ><br>    
+                        Hora: <input 
+                            type="time" 
+                            name="hora"                          
+                            ><br>                         
+                    </fieldset>
+                    <fieldset>
+                        <label>Clave de Ingreso </label><br>
+                        Contraseña: <input 
+                            type="password" 
+                            name="clave"                          
+                            ><br>                                                  
+                    </fieldset>
+
+                    <input type="submit" value="enviar" name="enciar/">
+                </form>
+                <footer><small>No distribuimos sus datos, confie...</small></footer>
+            </article>
+        </section>
+    </body>
+</html>
