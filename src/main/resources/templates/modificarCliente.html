@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body>
+
+                    <h2>Datos de Cliente</h2>
+                    <a th:href="@{/}">Regresar</a>  <!-- un url -->
+                    <hr/>
+                    <form th:action="@{/cliente/guardar}"
+                          method="post"
+                          th:object="${cliente}">  
+                        <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
+
+                        <fieldset>
+                            <label for="nombre">Nombre:</label> 
+                            <input type="text" 
+                                   name="nombre" 
+                                   th:field="*{nombre}"/> <!-- lo que yo ingrese va a ser utilizado el campo o atributo nombre del objeto cliente que va a estar en memoria -->
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="apellidos">Apellidos</label> 
+                            <input type="text" 
+                                   name="apellidos" 
+                                   th:field="*{apellidos}"/> <!-- lo que yo ingrese va a ser utilizado el campo o atributo nombre del objeto cliente que va a estar en memoria -->
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="correo">Correo</label> 
+                            <input type="email" 
+                                   placeholder="correo@xxxx.com"
+                                   name="correo" 
+                                   th:field="*{correo}"/> <!-- lo que yo ingrese va a ser utilizado el campo o atributo nombre del objeto cliente que va a estar en memoria -->
+                        </fieldset>
+
+                        <fieldset>
+                            <label for="telefono">Telefono</label> 
+                            <input type="tel" 
+                                   name="telefono" 
+                                   th:field="*{telefono}"/> <!-- lo que yo ingrese va a ser utilizado el campo o atributo nombre del objeto cliente que va a estar en memoria -->
+                        </fieldset>
+                        <hr/>
+                        <input type="submit" name="guardar" value="guardar"/>
+                    </form>       
+                </body>
+                </html>

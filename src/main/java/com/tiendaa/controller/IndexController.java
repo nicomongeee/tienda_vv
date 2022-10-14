@@ -2,6 +2,7 @@ package com.tiendaa.controller;
 
 import com.tiendaa.dao.ClienteDao;
 import com.tiendaa.domain.Cliente;
+import com.tiendaa.services.ClienteService;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ public class IndexController {
                //si existe clientedao que lo use sino que lo cree
                //inyeccion de dependencias
     
-    private ClienteDao clienteDao;
+    private ClienteService clienteService;
     
     //mapeo de los recursos
     @GetMapping("/")
@@ -29,7 +30,7 @@ public class IndexController {
         
         var clientes=Arrays.asList(cliente1,cliente2,cliente3);*/
         
-        var clientes = clienteDao.findAll(); //hace selct de la tabla y devuelve un arraylist
+        var clientes = clienteService.getClientes(); //hace select de la tabla y devuelve un arraylist
         
         model.addAttribute("clientes", clientes);
         
