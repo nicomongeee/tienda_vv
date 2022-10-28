@@ -9,8 +9,8 @@ body {
 }
 
 .header {
-    background-color: #076AF0;
-    height: 90px;
+    background-color: #E9C03A;
+    height: 95px;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,8 +28,14 @@ body {
     text-decoration: none;
 }
 
+.nav-pills {
+    color: white;
+    text-decoration: none;
+}
+
+
 .logo {
-    font-size: 30px;
+    font-size: 22px; /*fuente del logo*/
     font-weight: bold;
     padding: 0 40px;
     line-height: 90px;
@@ -42,7 +48,7 @@ body {
 }
 
 .nav-menu-item {
-    font-size: 18px;
+    font-size: 15px; /*fuente de los apratados del menu*/
     margin: 0 10px;
     line-height: 90px;
 }
@@ -50,10 +56,10 @@ body {
 .nav-menu-link:hover {
     background-color: #024070;
     transition: 1s;
-        
+
 }
 
 .nav-menu-link {
     padding: 8px 12px;
-    border-radius: 8px; 
+    border-radius: 8px;
 }
