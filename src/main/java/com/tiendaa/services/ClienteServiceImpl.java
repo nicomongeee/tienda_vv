@@ -1,7 +1,9 @@
 package com.tiendaa.services;
 
 import com.tiendaa.dao.ClienteDao;
+import com.tiendaa.dao.CreditoDao;
 import com.tiendaa.domain.Cliente;
+import com.tiendaa.domain.Credito;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class ClienteServiceImpl implements ClienteService {
     //Si no esta en memoria se crea el objeto
     @Autowired
     private ClienteDao clienteDao;
+
+    @Autowired
+    private CreditoDao creditoDao;
 
     //metodos para hacer un CRUD
     //CREATE READ UPDATE DELETE
@@ -32,6 +37,11 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     @Transactional
     public void save(Cliente cliente) { //insertar o actualizar
+
+        Credito credito = cliente.getCredito();
+        credito = creditoDao.save(credito);
+        cliente.setCredito(credito);
+
         clienteDao.save(cliente);
     }
 

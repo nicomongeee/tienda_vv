@@ -8,13 +8,23 @@
 
     </head>
     <body>
-        
-        <header th:fragment="header">
-            <h1>Tabla de Países</h1>
+
+        <header th:fragment="header" class="header">
+            <nav class="nav">
+                <a class="logo nav-link" th:href="@{/}">TechShop</a>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" th:href="@{/cliente/listado}">Clientes</a> </li>             
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" th:href="@{/categoria/listado}">Categoria</a> </li>      
+                    <li class="nav-menu-item">
+                        <a class="nav-menu-link nav-link" th:href="@{/articulo/listado}">Articulos</a> </li>          
+                </ul>
+            </nav> 
         </header>
-        
-        <footer th:fragment="footer">
-            <p>Hecho en desarrollo de aplicaiones web, grupo 7</p>
+
+        <footer th:fragment="footer" class="footer">
+            <p>&COPY; Derechos Reservados 2022</p>
         </footer>
 
 
