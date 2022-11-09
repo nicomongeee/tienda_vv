@@ -14,16 +14,15 @@ public class Articulo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //la generacion del valor de id cliente se le delega al motor de la BD
-    private Long idArticulo; //id_cliente en BD y en Java idCliente
+
+    private Long idArticulo;
+
     private Long idCategoria;
     private String descripcion;
     private String detalle;
     private double precio;
     private int existencias;
     private boolean activo;
-
-    public Articulo() {
-    }
 
     public Articulo(Long idCategoria, String descripcion, String detalle, double precio, int existencias, boolean activo) {
         this.idCategoria = idCategoria;
@@ -32,6 +31,10 @@ public class Articulo implements Serializable {
         this.precio = precio;
         this.existencias = existencias;
         this.activo = activo;
+    }
+
+    public Articulo() {
+
     }
 
 }

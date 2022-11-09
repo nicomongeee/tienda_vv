@@ -23,8 +23,6 @@ public class ArticuloController {
 
     @GetMapping("/articulo/listado")
     public String inicio(Model model) {
-        var texto = "Estamos en semana 4";
-        model.addAttribute("saludo", texto);
 
         var articulos = articuloService.getArticulos(false); //hace select de la tabla y devuelve un arraylist
 
@@ -49,10 +47,6 @@ public class ArticuloController {
     public String articuloActualiza(Articulo articulo, Model model) {
         articulo = articuloService.getArticulo(articulo); // va y hace un select en la tabla
         model.addAttribute("articulo", articulo);
-        
-        var categorias = categoriaService.getCategorias(true);
-        model.addAttribute("categorias", categorias);
-
         return "/articulo/modificar";
     }
 

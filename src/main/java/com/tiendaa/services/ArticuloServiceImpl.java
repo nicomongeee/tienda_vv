@@ -1,22 +1,23 @@
 package com.tiendaa.services;
 
 import com.tiendaa.dao.ArticuloDao;
+import com.tiendaa.dao.CategoriaDao;
 import com.tiendaa.domain.Articulo;
+import com.tiendaa.domain.Categoria;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service //para que la clase se considere un servicio
+@Service
 public class ArticuloServiceImpl implements ArticuloService {
 
-    //@Autowired provoca que si el objeto ya esta en memoria se usa ese
-    //Si no esta en memoria se crea el objeto
     @Autowired
     private ArticuloDao articuloDao;
 
-    //metodos para hacer un CRUD
-    //CREATE READ UPDATE DELETE
+    @Autowired
+    private CategoriaDao categoriaDao;
+
     @Override
     @Transactional(readOnly = true)
     public List<Articulo> getArticulos(boolean filtro) {
@@ -37,6 +38,7 @@ public class ArticuloServiceImpl implements ArticuloService {
     @Override
     @Transactional
     public void save(Articulo articulo) { //insertar o actualizar
+
         articuloDao.save(articulo);
     }
 

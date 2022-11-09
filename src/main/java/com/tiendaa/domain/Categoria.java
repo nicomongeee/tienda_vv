@@ -14,6 +14,7 @@ public class Categoria implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //la generacion del valor de id cliente se le delega al motor de la BD
+
     private Long idCategoria; //id_cliente en BD y en Java idCliente
 
     private String descripcion;
