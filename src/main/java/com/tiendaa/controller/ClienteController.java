@@ -17,10 +17,18 @@ public class ClienteController {
 
     private ClienteService clienteService;
 
+    @GetMapping("/cliente/buscar")
+    public String clienteBuscar(Cliente cliente, Model model, String apellidos) {
+        var clientes = clienteService.getClientesPorApellidos(apellidos);
+        model.addAttribute("clientes", clientes);
+        return "/cliente/buscar";
+    }
+
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
 
         var clientes = clienteService.getClientes(); //hace select de la tabla y devuelve un arraylist
+        //var clientes = clienteService.getClientesPorApellidos("Contreras Mora");
 
         model.addAttribute("clientes", clientes);
 

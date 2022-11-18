@@ -22,12 +22,19 @@ public class ClienteServiceImpl implements ClienteService {
 
     //metodos para hacer un CRUD
     //CREATE READ UPDATE DELETE
+    
+    @Override
+    @Transactional(readOnly = true)
+    public List<Cliente> getClientesPorApellidos(String apellidos) {
+        return (List<Cliente>)clienteDao.findByApellidos(apellidos);
+    }
+    
     @Override
     @Transactional(readOnly = true)
     public List<Cliente> getClientes() {
         return (List<Cliente>) clienteDao.findAll();
-    }
-
+    } 
+    
     @Override
     @Transactional(readOnly = true) //mientras tenga el readonly no modifica en la BD
     public Cliente getCliente(Cliente cliente) {
