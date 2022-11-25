@@ -24,7 +24,7 @@ public class Cliente implements Serializable {
 
     @JoinColumn(name = "id_credito", referencedColumnName = "id_credito")
     @ManyToOne //que tipo de relacion es
-    private Credito credito;
+    public Credito credito;
 
     public Cliente(String nombre, String apellidos, String correo, String telefono, Credito credito) {
         this.nombre = nombre;

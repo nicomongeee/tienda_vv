@@ -17,7 +17,7 @@ public class Credito implements Serializable {
     @Column(name = "id_credito") //que en la base se llama asi, para asociacion
     private Long idCredito; //id_cliente en BD y en Java idCliente
 
-    private double limite;
+    public double limite;
 
     public Credito() {
     }

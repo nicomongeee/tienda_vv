@@ -26,12 +26,16 @@ public class ClienteController {
 
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
-
-        var clientes = clienteService.getClientes(); //hace select de la tabla y devuelve un arraylist
-        //var clientes = clienteService.getClientesPorApellidos("Contreras Mora");
-
-        model.addAttribute("clientes", clientes);
-
+        var clientes=clienteService.getClientes();
+        
+        var limiteTotal=0;
+        for (var c: clientes) {
+            limiteTotal+=c.credito.limite;
+        }
+        model.addAttribute("limiteTotal",limiteTotal);
+        model.addAttribute("totalClientes",clientes.size());
+        
+        model.addAttribute("clientes",clientes);
         return "/cliente/listado";
     }
 
@@ -47,14 +51,14 @@ public class ClienteController {
         return "redirect:/cliente/listado"; //para redireccionar la ruta
     }
 
-    @GetMapping("/cliente/actualiza/{idCliente}")
+    @GetMapping("/cliente/modificar/{idCliente}")
     public String clienteActualiza(Cliente cliente, Model model) {
         cliente = clienteService.getCliente(cliente); // va y hace un select en la tabla
         model.addAttribute("cliente", cliente);
         return "/cliente/modificar";
     }
 
-    @GetMapping("/cliente/elimina/{idCliente}")
+    @GetMapping("/cliente/eliminar/{idCliente}")
     public String clienteElimina(Cliente cliente) {
         clienteService.delete(cliente); // va y hace un select en la tabla
         return "redirect:/cliente/listado";
