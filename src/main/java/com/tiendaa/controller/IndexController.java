@@ -1,10 +1,6 @@
 package com.tiendaa.controller;
 
-import com.tiendaa.dao.ClienteDao;
-import com.tiendaa.domain.Cliente;
 import com.tiendaa.services.ArticuloService;
-import com.tiendaa.services.ClienteService;
-import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

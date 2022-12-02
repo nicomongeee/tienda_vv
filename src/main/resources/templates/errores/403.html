@@ -3,12 +3,12 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:th="http://www.thymeleaf.org"
     xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-    <head th:replace="layout/plantilla :: head">
+    <head th:replace="layout/plantillas :: head">
         <title th:text="#{aplicacion.titulo}">TechShop</title>
         <meta charset="UTF-8"/>
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
+        <header th:replace="layout/plantillas :: header"/>
         <section id="actions" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">                   
@@ -35,6 +35,6 @@
                 </div>
             </div>
         </section>
-        <footer th:replace="layout/plantilla :: footer"/>
+        <footer th:replace="layout/plantillas :: footer"/>
     </body>
 </html>
